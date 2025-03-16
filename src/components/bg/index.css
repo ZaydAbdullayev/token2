@@ -1,0 +1,41 @@
+.animation-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #040404;
+  z-index: -1;
+}
+
+.animation-container span {
+  position: absolute;
+  bottom: -10px;
+  color: #da0e6d; /* Matrix efekti için yeşil */
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 5px #da0e6d, 0 0 10px #da0e6d;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: moveDown ease-in-out forwards;
+}
+
+@keyframes moveDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
